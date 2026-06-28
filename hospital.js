@@ -1,21 +1,10 @@
-let doctors = document.querySelectorAll(".team");
-let count = 0;
+const form = document.getElementById("appointmentForm");
+if (form){
 
-doctors.forEach(function(card, index){
-    card.style.left= ${index*100}%
-})
+    form.addEventListener("submit", function(e){
 
+        e.preventDefault();
 
-function myfun(){
-    doctors.forEach(function(curValue){
-        curValue.style.transform='translateX(-${count * 100}%)'
-    })
+        alert("Your appointment request has been submitted successfully!");
+    });
 }
-
-setInterval(function(){
-    count++;
-    if(count == doctors.length){
-        count=0;
-    }
-    myfun()
-}, 3000)
