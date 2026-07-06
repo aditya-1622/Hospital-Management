@@ -227,15 +227,128 @@ ul li a:hover{
     cursor: pointer;
 }
 
+.servicecard,
+.blogcard,
+.team img{
+
+transition:.4s ease;
+
+}
+
 .servicecard:hover,
 .blogcard:hover,
 .team img:hover{
-    transform: scale(1.05);
-    transition: 0.3s;
-    cursor: pointer;
+
+transform:translateY(-10px);
+
+box-shadow:0 20px 35px rgba(0,0,0,.15);
+
 }
 
 button:hover{
     background-color: #025b5b;
     transition: 0.3s;
+}
+
+.heroButtons{
+    display:flex;
+    gap:15px;
+    margin-top:30px;
+}
+
+.outlineBtn{
+    background:transparent;
+    border:2px solid white;
+    color:white;
+}
+
+.stats{
+    display:flex;
+    gap:40px;
+    margin-top:40px;
+}
+
+.stats h2{
+    font-size:32px;
+    color:#ffd54f;
+}
+
+.stats p{
+    margin-top:5px;
+}
+
+.main img{
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+.doctorContainer{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:30px;
+    padding:40px;
+}
+
+.doctorCard{
+    width:280px;
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.1);
+    transition:.4s;
+}
+
+.doctorCard img{
+    width:100%;
+    height:270px;
+    object-fit:cover;
+}
+
+.doctorCard h3{
+    margin-top:15px;
+}
+
+.doctorCard p{
+    color:#666;
+    margin:8px 0;
+}
+
+.doctorInfo{
+    color:#036f77;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.doctorCard button{
+    width:85%;
+    height:45px;
+    margin-bottom:20px;
+    border:none;
+    border-radius:8px;
+    background:#036f77;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+}
+
+.doctorCard:hover{
+    transform:translateY(-12px);
+    box-shadow:0 20px 35px rgba(0,0,0,.2);
 }
