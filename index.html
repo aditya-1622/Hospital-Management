@@ -3,255 +3,817 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Hospital Management </title>
-   
-    <!-- font awesome cdn link-->
-    
+    <title>Central Care Hospital</title>
+
     <link rel="stylesheet" href="hospital.css">
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran:wght@200&family=Courgette&family=Dancing+Script:wght@700&family
-    =Edu+TAS+Beginner:wght@700&family=Lato:wght@300;
-    900&family=Mukta:wght@700&family=Mulish:wght@300&family=Open+Sans&family=PT+Sans:ital,wght@1,
-    700&family=Poppins:wght@300&family=Raleway:wght@100&family=Roboto&family=Roboto+Condensed:wght@700&family=Roboto+Slab&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <script src="https://kit.fontawesome.com/f30fac2c61.js" crossorigin="anonymous"></script>
-
-
-
 </head>
+
 <body>
-    <div class="container">
-          <nav>
-             <div class="logo">
 
-                <h1>Central Care </h1>
-             </div>
-             <ul>
-                <li><a href="#home"> Home </a></li>
-                <li><a href="#service"> Services </a></li>
-                <li><a href="#doctors"> Doctors </a></li>
-                <li><a href="#blogs"> Blog </a></li>
-                <li><a href="#appointment"> Appointment </a></li>
-             </ul>
+<div id="loader">
+    <div class="loader-content">
+        ❤️
+        <h2>Central Care</h2>
+        <p>Loading...</p>
+    </div>
+</div>
+
+<div id="progressBar"></div>
+
+<header>
+
+<nav>
+
+<div class="logo">
+<h1>Central Care</h1>
+</div>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#service">Services</a></li>
+
+<li><a href="#departments">Departments</a></li>
+
+<li><a href="#doctors">Doctors</a></li>
+
+<li><a href="#appointment">Appointment</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+<div class="navRight">
+
+<button id="themeBtn">
+
+<i class="fa-solid fa-moon"></i>
+
+</button>
+
+</div>
+
 </nav>
-         <div class="main">
-            <img src="doctors.jpg" alt="">
 
-            <div class="mainText"> 
-                <h1> Care With Best Central Care </h1>
-                <p> Welcome to our Hospital Management System.
-                  Here,managing patient records,appointments,and hospital services is simple and efficient.Our goal is to provide a seamless healthcare experience 
-                  for both staff and patients.
-               Our hospital management platform ensures quick,secure,and 
-               easy access to patient information.We aim to make healthcare management faster 
-               and more efficient for everyone.. </p>
-               <br>
-                <div class="heroButtons">
-    <button>Book Appointment</button>
-    <button class="outlineBtn">Our Doctors</button>
+</header>
+
+<section class="hero" id="home">
+
+<div class="heroText">
+
+<span class="badge">
+
+🏥 Trusted Hospital Since 2010
+
+</span>
+
+<h1>
+
+Your Health,
+
+<span>Our Priority.</span>
+
+</h1>
+
+<p>
+
+Providing world-class healthcare with experienced doctors,
+modern technology and compassionate care.
+
+Book appointments online and receive quality treatment.
+
+</p>
+
+<div class="heroBtns">
+
+<a href="#appointment">
+
+<button class="primaryBtn">
+
+Book Appointment
+
+</button>
+
+</a>
+
+<a href="#doctors">
+
+<button class="secondaryBtn">
+
+Meet Doctors
+
+</button>
+
+</a>
+
 </div>
 
 <div class="stats">
-    <div>
-        <h2 class="counter" data-target="120">0</h2>
-        <p>Doctors</p>
-    </div>
 
-    <div>
-        <h2 class="counter" data-target="25000">0</h2>
-        <p>Patients</p>
-    </div>
+<div class="stat">
 
-    <div>
-        <h2>24/7</h2>
-        <p>Emergency</p>
-    </div>
-</div>
-            </div>
+<h2 class="counter" data-target="120">0</h2>
 
-         </div>
-
-      <div id="service"> 
-           <div class="head">
-            <h1> Our Service's </h1>
-           </div>
-
-<div class="service">
-   <div class="servicecard">
-      <img src="chest.jpg" alt="">
-      <p> Chest and Respiratory</p>
-   </div>
-
-   <div class="servicecard">
-      <img src="laboratory.jpg" alt="">
-      <p> Laboratory </p>
-   </div>
-
-   <div class="servicecard">
-      <img src="physiotherapy.jpeg" alt="">
-      <p> Physiotherapy</p>
-   </div>
-
-   <div class="servicecard">
-      <img src="nutrition.png" alt="">
-      <p> Nutrition </p>
-   </div>
-</div>
-      </div>
-
-      <div id="doctors">
-
-    <div class="head">
-        <h1>Our Doctors</h1>
-        <p>Meet our experienced healthcare specialists.</p>
-    </div>
-
-    <div class="doctorContainer">
-
-        <div class="doctorCard">
-            <img src="d1.jpg" alt="">
-            <h3>Dr. Rahul Sharma</h3>
-            <p>Cardiologist</p>
-
-            <div class="doctorInfo">
-                ⭐ 4.9 &nbsp;&nbsp; | &nbsp;&nbsp; 12 Years Exp.
-            </div>
-
-            <button>Book Appointment</button>
-        </div>
-
-        <div class="doctorCard">
-            <img src="d2.jpg" alt="">
-            <h3>Dr. Priya Verma</h3>
-            <p>Neurologist</p>
-
-            <div class="doctorInfo">
-                ⭐ 4.8 &nbsp;&nbsp; | &nbsp;&nbsp; 10 Years Exp.
-            </div>
-
-            <button>Book Appointment</button>
-        </div>
-
-        <div class="doctorCard">
-            <img src="d3.webp" alt="">
-            <h3>Dr. Aman Singh</h3>
-            <p>Orthopedic Surgeon</p>
-
-            <div class="doctorInfo">
-                ⭐ 5.0 &nbsp;&nbsp; | &nbsp;&nbsp; 15 Years Exp.
-            </div>
-
-            <button>Book Appointment</button>
-        </div>
-
-        <div class="doctorCard">
-            <img src="d4.webp" alt="">
-            <h3>Dr. Neha Kapoor</h3>
-            <p>Pediatrician</p>
-
-            <div class="doctorInfo">
-                ⭐ 4.9 &nbsp;&nbsp; | &nbsp;&nbsp; 8 Years Exp.
-            </div>
-
-            <button>Book Appointment</button>
-        </div>
-
-    </div>
+<p>Doctors</p>
 
 </div>
-     
-    
-       <div id="blogs">
-           <div class="head">
-            <h1> Read Blog </h1>
-          </div>
 
-           <div class="blogs">
-              <div class="blogcard">
-               <img src="b1.jpg" alt="">
-               <h2> Health Care </h2>
-               <a href=""> Read More</a>
-              </div>
+<div class="stat">
 
-          <div class="blogcard">
-               <img src="b2.jpg" alt="">
-               <h2> Health Care </h2>
-               <a href=""> Read More</a>
-              </div>
+<h2 class="counter" data-target="25000">0</h2>
 
-             <div class="blogcard">
-               <img src="b3.jpg" alt="">
-               <h2> Health Care </h2>
-               <a href=""> Read More</a>
-              </div>
-            </div>
-        </div>
-    
-    <div id="appointment">
-      <div class="head">
-         <h1> Book An Appointment </h1>
-      </div>
-         <div class="form">
-            <form id= "appointmentForm">
-            <input type="text" placeholder="Enter You Name">
-             <input type="text" placeholder="Enter Number">
-              <input type="date">
-               <input type="time">
-            <button type = "submit">   BOOK </button>
-            </form>
-         </div>
-    </div>
-    
-    <div class="footer">
-        
-      <div class="text">
-          <h2> About </h2>
-          <p> We Provide best Hospitality, 24*7 Hours Opens.<br>
-            For any Other Queries. <br> Call Now or Send Text on Number +91-7897867546
-          </p>
-          
-        </div>
+<p>Happy Patients</p>
 
-         <div class="text">
-          <h2> Care </h2>
-          <p> Facility</p>
-          <p> Reviews</p>
-          <p> Support</p>
-          <p> Staff </p>
-        </div>
-
-         <div class="text">
-          <h2> Address </h2>
-          <p> JK Hills</p>
-          <p> Galaxy</p>
-          <p> 234-999</p>
-          <p> Maps</p>
-        </div>
-
-         <div class="text">
-          <h2> Contact Us </h2>
-          <p>
-            <i class = "fa-brands fa-instagram">  </i> Instagram </p>
-          <p>
-             <i class = "fa-brands fa-linkedIn">  </i> LinkedIn </p>
-          <p>
-            <i class = "fa-brands fa-Facebook">  </i> Facebook </p>
-          <p>
-            <i class = "fa-solid fa-phone">  </i> +91-8303765321 </p>
-        </div>
-
-    </div>
-    
 </div>
-    
+
+<div class="stat">
+
+<h2>24/7</h2>
+
+<p>Emergency</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="heroImage">
+
+<img src="doctors.jpg" alt="Doctors">
+
+<div class="floatingCard">
+
+<i class="fa-solid fa-user-doctor"></i>
+
+<h3>Expert Doctors</h3>
+
+<p>Highly Qualified Specialists</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="whyChoose">
+
+<h2 class="sectionTitle">
+
+Why Choose Central Care?
+
+</h2>
+
+<div class="chooseContainer">
+
+<div class="chooseCard">
+
+<i class="fa-solid fa-heart-pulse"></i>
+
+<h3>Quality Treatment</h3>
+
+<p>
+
+Advanced medical equipment with experienced professionals.
+
+</p>
+
+</div>
+
+<div class="chooseCard">
+
+<i class="fa-solid fa-user-doctor"></i>
+
+<h3>Expert Doctors</h3>
+
+<p>
+
+Highly qualified specialists from different departments.
+
+</p>
+
+</div>
+
+<div class="chooseCard">
+
+<i class="fa-solid fa-clock"></i>
+
+<h3>24×7 Emergency</h3>
+
+<p>
+
+Emergency support available every hour of every day.
+
+</p>
+
+</div>
+
+<div class="chooseCard">
+
+<i class="fa-solid fa-shield-heart"></i>
+
+<h3>Patient Safety</h3>
+
+<p>
+
+Safe environment and best healthcare practices.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= SERVICES ================= -->
+
+<section id="service">
+
+    <h2 class="sectionTitle">
+        Our Medical Services
+    </h2>
+
+    <div class="serviceContainer">
+
+        <div class="serviceCard">
+            <img src="chest.jpg" alt="">
+            <h3>Chest Care</h3>
+            <p>
+                Advanced diagnosis and treatment for respiratory and chest diseases.
+            </p>
+        </div>
+
+        <div class="serviceCard">
+            <img src="laboratory.jpg" alt="">
+            <h3>Laboratory</h3>
+            <p>
+                Accurate laboratory testing with modern equipment.
+            </p>
+        </div>
+
+        <div class="serviceCard">
+            <img src="physiotherapy.jpeg" alt="">
+            <h3>Physiotherapy</h3>
+            <p>
+                Personalized rehabilitation programs for faster recovery.
+            </p>
+        </div>
+
+        <div class="serviceCard">
+            <img src="nutrition.png" alt="">
+            <h3>Nutrition</h3>
+            <p>
+                Diet planning and nutrition guidance from certified experts.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DEPARTMENTS ================= -->
+
+<section id="departments">
+
+<h2 class="sectionTitle">
+Hospital Departments
+</h2>
+
+<div class="departmentContainer">
+
+<div class="departmentCard">
+
+<i class="fa-solid fa-heart-pulse"></i>
+
+<h3>Cardiology</h3>
+
+<p>Heart specialists providing world class cardiac treatment.</p>
+
+</div>
+
+<div class="departmentCard">
+
+<i class="fa-solid fa-brain"></i>
+
+<h3>Neurology</h3>
+
+<p>Diagnosis and treatment for brain and nervous system disorders.</p>
+
+</div>
+
+<div class="departmentCard">
+
+<i class="fa-solid fa-bone"></i>
+
+<h3>Orthopedics</h3>
+
+<p>Bone and joint care with advanced surgical facilities.</p>
+
+</div>
+
+<div class="departmentCard">
+
+<i class="fa-solid fa-baby"></i>
+
+<h3>Pediatrics</h3>
+
+<p>Complete healthcare services for infants and children.</p>
+
+</div>
+
+</div>
+
+</section>
 
 
 
+<!-- ================= DOCTORS ================= -->
+
+<section id="doctors">
+
+<h2 class="sectionTitle">
+Meet Our Specialists
+</h2>
+
+<div class="searchBox">
+
+<input
+type="text"
+id="doctorSearch"
+placeholder="Search doctor by name...">
+
+</div>
+
+<div class="doctorContainer">
+
+<div class="doctorCard">
+
+<img src="d1.jpg">
+
+<h3>Dr. Raj Sharma</h3>
+
+<p>Cardiologist</p>
+
+<span>⭐ 4.9</span>
+
+<button>Book Now</button>
+
+</div>
+
+<div class="doctorCard">
+
+<img src="d2.jpg">
+
+<h3>Dr. Priya Singh</h3>
+
+<p>Neurologist</p>
+
+<span>⭐ 4.8</span>
+
+<button>Book Now</button>
+
+</div>
+
+<div class="doctorCard">
+
+<img src="d3.webp">
+
+<h3>Dr. Amit Verma</h3>
+
+<p>Orthopedic</p>
+
+<span>⭐ 4.9</span>
+
+<button>Book Now</button>
+
+</div>
+
+<div class="doctorCard">
+
+<img src="d4.webp">
+
+<h3>Dr. Neha Kapoor</h3>
+
+<p>Pediatrician</p>
+
+<span>⭐ 4.7</span>
+
+<button>Book Now</button>
+
+</div>
+
+<div class="doctorCard">
+
+<img src="cardiologist-1.jpg">
+
+<h3>Dr. Vivek Gupta</h3>
+
+<p>Cardiologist</p>
+
+<span>⭐ 5.0</span>
+
+<button>Book Now</button>
+
+</div>
+
+<div class="doctorCard">
+
+<img src="d6.jpeg">
+
+<h3>Dr. Rohan Mehta</h3>
+
+<p>Physician</p>
+
+<span>⭐ 4.8</span>
+
+<button>Book Now</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+
+<section id="testimonials">
+
+<h2 class="sectionTitle">What Our Patients Say</h2>
+
+<div class="testimonialContainer">
+
+<div class="testimonialCard active">
+<img src="d7.avif" alt="">
+<h3>Rahul Sharma</h3>
+<p>"Excellent doctors and amazing facilities. Highly recommended!"</p>
+<span>⭐⭐⭐⭐⭐</span>
+</div>
+
+<div class="testimonialCard">
+<img src="d8.avif" alt="">
+<h3>Priya Verma</h3>
+<p>"Very supportive staff and quick appointment process."</p>
+<span>⭐⭐⭐⭐⭐</span>
+</div>
+
+<div class="testimonialCard">
+<img src="d9.avif" alt="">
+<h3>Amit Singh</h3>
+<p>"Best hospital experience with modern technology."</p>
+<span>⭐⭐⭐⭐⭐</span>
+</div>
+
+</div>
+
+</section>
 
 
+<!-- ================= FAQ ================= -->
+
+<section id="faq">
+
+<h2 class="sectionTitle">Frequently Asked Questions</h2>
+
+<div class="faqContainer">
+
+<div class="faq">
+
+<h3>How can I book an appointment?</h3>
+
+<p>
+Simply fill out the appointment form below and our team will contact you.
+</p>
+
+</div>
+
+<div class="faq">
+
+<h3>Is emergency service available?</h3>
+
+<p>
+Yes, our emergency department is available 24×7.
+</p>
+
+</div>
+
+<div class="faq">
+
+<h3>Do you accept online consultation?</h3>
+
+<p>
+Yes, online consultation is available for selected departments.
+</p>
+
+</div>
+
+<div class="faq">
+
+<h3>What are hospital timings?</h3>
+
+<p>
+The hospital operates 24 hours every day.
+</p>
+
+</div>
+
+</div>
+
+</section>
 
 
+<!-- ================= BMI ================= -->
+
+<section id="bmi">
+
+<h2 class="sectionTitle">BMI Calculator</h2>
+
+<div class="bmiBox">
+
+<input
+type="number"
+id="height"
+placeholder="Height (cm)">
+
+<input
+type="number"
+id="weight"
+placeholder="Weight (kg)">
+
+<button id="bmiBtn">
+
+Calculate BMI
+
+</button>
+
+<h3 id="result">
+
+Your BMI :
+
+</h3>
+
+</div>
+
+</section>
 
 
+<!-- ================= HEALTH TIPS ================= -->
 
+<section id="healthTips">
+
+<h2 class="sectionTitle">
+
+Health Tips
+
+</h2>
+
+<div class="tipsContainer">
+
+<div class="tipCard">
+
+<i class="fa-solid fa-glass-water"></i>
+
+<h3>Drink Water</h3>
+
+<p>
+
+Drink at least 8 glasses of water daily.
+
+</p>
+
+</div>
+
+<div class="tipCard">
+
+<i class="fa-solid fa-person-running"></i>
+
+<h3>Exercise</h3>
+
+<p>
+
+Exercise at least 30 minutes every day.
+
+</p>
+
+</div>
+
+<div class="tipCard">
+
+<i class="fa-solid fa-apple-whole"></i>
+
+<h3>Healthy Diet</h3>
+
+<p>
+
+Eat balanced meals rich in fruits and vegetables.
+
+</p>
+
+</div>
+
+<div class="tipCard">
+
+<i class="fa-solid fa-bed"></i>
+
+<h3>Sleep</h3>
+
+<p>
+
+Sleep 7–8 hours every night for better health.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= APPOINTMENT ================= -->
+
+<section id="appointment">
+
+<h2 class="sectionTitle">Book an Appointment</h2>
+
+<div class="appointmentContainer">
+
+<form id="appointmentForm">
+
+<input type="text" id="name" placeholder="Full Name" required>
+
+<input type="tel" id="phone" placeholder="Phone Number" required>
+
+<input type="email" id="email" placeholder="Email Address" required>
+
+<select id="department" required>
+<option value="">Select Department</option>
+<option>Cardiology</option>
+<option>Neurology</option>
+<option>Orthopedics</option>
+<option>Pediatrics</option>
+</select>
+
+<input type="date" id="date" required>
+
+<input type="time" id="time" required>
+
+<button type="submit" class="primaryBtn">
+Book Appointment
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+<!-- ================= NEWSLETTER ================= -->
+
+<section id="newsletter">
+
+<h2 class="sectionTitle">Subscribe to our Newsletter</h2>
+
+<p>
+Get the latest healthcare updates and medical tips.
+</p>
+
+<div class="newsletterBox">
+
+<input
+type="email"
+placeholder="Enter your email">
+
+<button>
+
+Subscribe
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+<h2 class="sectionTitle">Contact Us</h2>
+
+<div class="contactContainer">
+
+<div>
+
+<h3>📍 Address</h3>
+
+<p> Sector 62 Noida </p>
+
+<p>India</p>
+
+</div>
+
+<div>
+
+<h3>📞 Phone</h3>
+
+<p>+91 8303765321</p>
+
+<p>24×7 Emergency Support</p>
+
+</div>
+
+<div>
+
+<h3>📧 Email</h3>
+
+<p>centralcare@gmail.com</p>
+
+<p>support@centralcare.com</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="footerContainer">
+
+<div>
+
+<h2>Central Care</h2>
+
+<p>
+
+Providing trusted healthcare with modern technology and compassionate doctors.
+
+</p>
+
+</div>
+
+<div>
+
+<h3>Quick Links</h3>
+
+<a href="#home">Home</a>
+
+<a href="#service">Services</a>
+
+<a href="#doctors">Doctors</a>
+
+<a href="#appointment">Appointment</a>
+
+</div>
+
+<div>
+
+<h3>Follow Us</h3>
+
+<a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+
+<a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+
+<a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
+
+</div>
+
+</div>
+
+<p class="copyright">
+    © <span id="year"></span> Central Care Hospital. All Rights Reserved.
+</p>
+
+</footer>
+
+
+<!-- Floating Buttons -->
+
+<a href="tel:+918303765321" class="emergencyBtn">
+
+🚑 Emergency
+
+</a>
+
+<button id="topBtn">
+
+↑
+
+</button>
+
+
+<script src="hospital.js"></script>
 
 </body>
+
 </html>
