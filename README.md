@@ -109,3 +109,6 @@ This is a learning/portfolio project. Before using it for anything real:
 ## 📄 License
 
 This project is open source and available for personal or educational use.
+
+-- LIVE DEPLOYMENT RENDER.COM
+https://hospital-management-s1qa.onrender.com
