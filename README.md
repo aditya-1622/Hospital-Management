@@ -1,89 +1,111 @@
-# Central Care — Hospital Management (Enhanced)
+# 🏥 Central Care — Hospital Management System
 
-A full rebuild of your original static hospital landing page into a real
-full-stack app: a redesigned frontend, a working appointment-booking system
-backed by a real database, and an admin dashboard to manage appointments.
+A full-stack hospital management web app: browse doctors, check real-time appointment
+availability, book a visit, and manage everything from an admin dashboard.
 
-## What changed from your original project
+Originally a static landing page, rebuilt into a complete booking system with a
+Flask + SQLite backend, a redesigned frontend, and an admin panel.
 
-| Area | Before | After |
-|---|---|---|
-| Design | Default template look | New teal/coral design system, custom type pairing (Fraunces + Work Sans + IBM Plex Mono), animated pulse-line signature element |
-| Navigation | No mobile menu | Responsive hamburger menu, sticky nav, dark mode toggle |
-| Appointment form | `alert()` only, nothing saved | Real validation, live available-slots picker, saved to a database, prevents double-booking |
-| Doctors | Hardcoded in HTML | Loaded live from the backend (`/api/doctors`), each doctor has real availability |
-| Data | None | SQLite database (`hospital.db`) — appointments, doctors, admin accounts |
-| Admin | None | `/admin.html` — login, filter/view/update appointment status, add new doctors |
-| Accessibility | Empty `alt=""` everywhere, no labels | Descriptive alt text, `<label>`s on every input, skip-link, focus outlines, `prefers-reduced-motion` respected |
+![Python](https://img.shields.io/badge/Python-3.9+-3776AB?logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-3.1-000000?logo=flask&logoColor=white)
+![SQLite](https://img.shields.io/badge/Database-SQLite-07405E?logo=sqlite&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Active-success)
 
-## Project structure
+---
 
-```
-hospital-enhanced/
+## ✨ Features
+
+- **Live doctor directory** — pulled from the database, not hardcoded
+- **Real-time slot booking** — pick a doctor and date, see actual open time slots
+- **No double-booking** — server-side checks stop two people grabbing the same slot
+- **Form validation** — client-side and server-side, so bad data never reaches the database
+- **Admin dashboard** — secure login, filter/update appointment status, add new doctors
+- **Responsive design** — mobile nav, dark mode, smooth scroll animations
+- **Accessible** — proper labels, alt text, keyboard focus states, reduced-motion support
+
+## 📸 Screenshots
+
+<!-- Add your own screenshots here, e.g.: -->
+<!-- ![Homepage](docs/screenshots/home.png) -->
+<!-- ![Admin Dashboard](docs/screenshots/admin.png) -->
+
+## 🧱 Tech Stack
+
+| Layer | Tech |
+|---|---|
+| Backend | Python, Flask |
+| Database | SQLite |
+| Frontend | HTML, CSS, vanilla JavaScript |
+| Auth | Flask sessions (cookie-based) |
+
+## 📂 Project Structure
+hospital-management/
 ├── backend/
-│   ├── app.py            # Flask app: serves frontend + JSON API
-│   ├── database.py       # SQLite schema + seed data
-│   └── requirements.txt
+│    app.py             # Flask app — routes + API
+│    database.py        # Schema + seed data
+│    requirements.txt
 ├── frontend/
-│   ├── index.html        # Public site
-│   ├── admin.html         # Staff dashboard
-│   ├── css/
-│   ├── js/
-│   └── images/
+│    index.html         # Public site
+│    admin.html         # Staff dashboard
+│    css/
+│    js/
+│    images/
 └── README.md
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Python 3.9+
+- pip
+
+### Installation
+
+```bash
+git clone https://github.com/aditya-1622/Hospital-Management
+cd <your-repo>/backend
+pip install -r requirements.txt
+python app.py
 ```
 
-## Running it locally
+Then open:
+- **Public site:** http://127.0.0.1:5000
+- **Admin dashboard:** http://127.0.0.1:5000/admin.html
 
-1. Install Python dependencies (Python 3.9+ recommended):
-   ```bash
-   cd backend
-   pip install -r requirements.txt
-   ```
-2. Start the server:
-   ```bash
-   python app.py
-   ```
-3. Open your browser:
-   - Public site: http://127.0.0.1:5000
-   - Staff dashboard: http://127.0.0.1:5000/admin.html
+The SQLite database is created and seeded automatically on first run.
 
-The database (`hospital.db`) is created automatically on first run, seeded
-with 4 doctors and one admin account.
+### Default admin login
+Username: admin
+Password: admin123
 
-**Default admin login:** `admin` / `admin123`
-Change this in production — see "Next steps" below.
+⚠️ Change this before deploying anywhere public — see [Security notes](#-security-notes).
 
-## How booking works
+## 🔌 API Reference
 
-1. Visitor picks a doctor and a date on the public site.
-2. Frontend calls `GET /api/slots?doctor_id=..&date=..`, which computes that
-   doctor's working hours minus any slots already booked that day.
-3. On submit, `POST /api/appointments` re-validates everything server-side
-   (never trust the browser) and re-checks the slot is still free before
-   saving — this prevents two people booking the same slot at once.
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/api/doctors` | List all doctors |
+| `GET` | `/api/slots?doctor_id=&date=` | Get open slots for a doctor on a date |
+| `POST` | `/api/appointments` | Book an appointment |
+| `POST` | `/api/admin/login` | Admin login |
+| `POST` | `/api/admin/logout` | Admin logout |
+| `GET` | `/api/admin/appointments` | List appointments (admin only) |
+| `PATCH` | `/api/admin/appointments/<id>` | Update appointment status (admin only) |
+| `POST` | `/api/admin/doctors` | Add a doctor (admin only) |
 
-## Admin dashboard
+## 🗺️ Roadmap
 
-- Log in at `/admin.html`.
-- Filter appointments by status or date.
-- Change an appointment's status (pending → confirmed → completed, or cancel).
-- Add new doctors via the "+ Add doctor" button.
-- Session is cookie-based (Flask's built-in session), so it persists across
-  page reloads until you log out.
+- [ ] Patient login to view/cancel their own appointments
+- [ ] Email/SMS booking confirmations
+- [ ] Edit/remove doctors from the admin panel
+- [ ] Deploy to a live URL (Render / Railway)
 
-## Suggested next steps (not yet built)
+## 🔒 Security notes
 
-If you want to keep going, natural next additions:
-- **Password reset / multiple admin accounts** — currently one hardcoded seed admin.
-- **Email/SMS confirmation** on booking (e.g. via SendGrid or Twilio).
-- **Patient login** so people can view/cancel their own upcoming appointments.
-- **Deploy** — this Flask dev server isn't for production; deploy behind
-  gunicorn/Nginx, or on Render/Railway/PythonAnywhere for a live URL.
-- **Doctor photo uploads** from the admin panel instead of hardcoded filenames.
+This is a learning/portfolio project. Before using it for anything real:
+- Change the default admin password and `SECRET_KEY` in `app.py`
+- Don't run Flask's built-in dev server in production — use gunicorn/Nginx or a managed host
+- Add HTTPS if deploying publicly
 
-## Notes
+## 📄 License
 
-- All original images were kept and reused (`frontend/images/`).
-- No external JS frameworks — plain HTML/CSS/JS on the frontend, so it's
-  easy to keep editing without a build step.
+This project is open source and available for personal or educational use.
