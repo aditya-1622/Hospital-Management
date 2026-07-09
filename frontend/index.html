@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Central Care — Hospital Management</title>
+<meta name="description" content="Book appointments, meet our doctors, and explore services at Central Care Hospital.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/hospital.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<nav aria-label="Primary">
+  <div class="logo">
+    <h1><span class="pulse-dot" aria-hidden="true"></span> Central Care</h1>
+  </div>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#doctors">Doctors</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#appointment">Appointment</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+  </div>
+</nav>
+
+<main id="main">
+
+  <section class="hero" id="home">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Central Care Hospital</span>
+        <h2 class="headline">Care that runs on time, every time.</h2>
+        <p class="lede">
+          Book a doctor in under a minute, see real appointment slots, and manage
+          your visit online — no phone queue required.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" id="heroBookBtn">Book an appointment</button>
+          <a href="#doctors" class="btn btn-outline">Meet our doctors</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><div class="num" data-target="120">0</div><div class="label">Doctors on call</div></div>
+          <div class="stat"><div class="num" data-target="25000">0</div><div class="label">Patients treated</div></div>
+          <div class="stat"><div class="num-static">24/7</div><div class="label">Emergency care</div></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="images/doctors.jpg" alt="Two Central Care doctors reviewing a patient chart together">
+      </div>
+    </div>
+    <svg class="pulse-divider container" viewBox="0 0 1180 60" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 30 L260 30 L285 8 L310 52 L335 30 L360 30 L385 15 L400 30 L1180 30" />
+    </svg>
+  </section>
+
+  <section id="services">
+    <div class="section-head reveal">
+      <span class="eyebrow">What we treat</span>
+      <h2>Services built around you</h2>
+      <p>From routine checkups to specialist care, our departments work together on one record.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <img src="images/chest.jpg" alt="Chest X-ray being reviewed by a respiratory specialist">
+        <div class="body"><span class="num">01</span><h3>Chest &amp; Respiratory</h3></div>
+      </div>
+      <div class="service-card reveal">
+        <img src="images/laboratory.jpg" alt="Hospital laboratory with diagnostic equipment">
+        <div class="body"><span class="num">02</span><h3>Laboratory</h3></div>
+      </div>
+      <div class="service-card reveal">
+        <img src="images/physiotherapy.jpeg" alt="Physiotherapist guiding a patient through a rehab exercise">
+        <div class="body"><span class="num">03</span><h3>Physiotherapy</h3></div>
+      </div>
+      <div class="service-card reveal">
+        <img src="images/nutrition.png" alt="Nutritionist consultation with meal planning materials">
+        <div class="body"><span class="num">04</span><h3>Nutrition</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="doctors">
+    <div class="section-head reveal">
+      <span class="eyebrow">Our specialists</span>
+      <h2>Meet the team</h2>
+      <p>Every doctor below shows real, live availability — pick one to see today's open slots.</p>
+    </div>
+    <div class="doctors-grid" id="doctorsGrid">
+      <!-- populated by hospital.js from /api/doctors -->
+      <p class="loading-msg">Loading doctors…</p>
+    </div>
+  </section>
+
+  <section id="blog">
+    <div class="section-head reveal">
+      <span class="eyebrow">Health notes</span>
+      <h2>From the blog</h2>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card reveal">
+        <img src="images/b1.jpg" alt="Doctor explaining preventive care to a patient">
+        <div class="body"><h2 style="font-size:1.1rem">Why annual checkups matter</h2><a class="readmore" href="#">Read more →</a></div>
+      </div>
+      <div class="blog-card reveal">
+        <img src="images/b2.jpg" alt="Nurse monitoring patient vitals">
+        <div class="body"><h2 style="font-size:1.1rem">Understanding your vitals</h2><a class="readmore" href="#">Read more →</a></div>
+      </div>
+      <div class="blog-card reveal">
+        <img src="images/b3.jpg" alt="Family in a hospital waiting room">
+        <div class="body"><h2 style="font-size:1.1rem">Preparing for a hospital visit</h2><a class="readmore" href="#">Read more →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="appointment">
+    <div class="section-head reveal">
+      <span class="eyebrow">Book online</span>
+      <h2>Book an appointment</h2>
+      <p>Choose a doctor, pick an open slot, and you're done.</p>
+    </div>
+
+    <form class="appointment-wrap reveal" id="appointmentForm" novalidate>
+      <div class="form-row">
+        <label for="patientName">Full name</label>
+        <input type="text" id="patientName" name="patient_name" autocomplete="name" required>
+        <div class="error-msg" id="err-patientName"></div>
+      </div>
+
+      <div class="two-col">
+        <div class="form-row">
+          <label for="phone">Phone number</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+91 98765 43210" required>
+          <div class="error-msg" id="err-phone"></div>
+        </div>
+        <div class="form-row">
+          <label for="doctorSelect">Doctor</label>
+          <select id="doctorSelect" name="doctor_id" required>
+            <option value="">Select a doctor…</option>
+          </select>
+          <div class="error-msg" id="err-doctorSelect"></div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="apptDate">Date</label>
+        <input type="date" id="apptDate" name="appointment_date" required>
+        <div class="error-msg" id="err-apptDate"></div>
+      </div>
+
+      <div class="form-row">
+        <label id="slotsLabel">Available time slots</label>
+        <div id="slotsWrap"><p class="slot-hint">Choose a doctor and date to see open slots.</p></div>
+        <input type="hidden" id="apptTime" name="appointment_time" required>
+        <div class="error-msg" id="err-apptTime"></div>
+      </div>
+
+      <div class="form-row">
+        <label for="notes">Notes (optional)</label>
+        <input type="text" id="notes" name="notes" placeholder="Reason for visit, symptoms, etc.">
+      </div>
+
+      <button type="submit" class="btn btn-primary" id="submitBtn" style="width:100%; justify-content:center;">Book appointment</button>
+      <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+    </form>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3>About</h3>
+      <p>Central Care provides 24/7 hospital services. For any query, call or text +91-7897867546.</p>
+    </div>
+    <div>
+      <h3>Care</h3>
+      <a href="#services">Facilities</a>
+      <a href="#doctors">Doctors</a>
+      <a href="#appointment">Book a visit</a>
+    </div>
+    <div>
+      <h3>Address</h3>
+      <p> Sector 62 Noida </p>
+      <p> Pin 201012 </p>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+      <a href="tel:+918303765321">+91-8303765321</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Central Care Hospital.</span>
+    <a href="admin.html">Staff login</a>
+  </div>
+</footer>
+
+<script src="js/hospital.js"></script>
+</body>
+</html>

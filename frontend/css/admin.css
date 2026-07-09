@@ -1,0 +1,66 @@
+.dash-toolbar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 22px;
+}
+.dash-toolbar select, .dash-toolbar input[type="date"] {
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--line);
+  background: var(--white);
+  color: var(--ink);
+}
+
+.table-wrap {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  box-shadow: var(--shadow-card);
+}
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+th, td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover { background: var(--mint-100); }
+.loading-cell { text-align: center; color: var(--ink-soft); padding: 30px !important; }
+
+.status-pill {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  text-transform: capitalize;
+}
+.status-pending { background: rgba(201,138,30,0.15); color: var(--warning); }
+.status-confirmed { background: rgba(20,122,118,0.15); color: var(--teal-700); }
+.status-completed { background: rgba(47,158,68,0.15); color: var(--success); }
+.status-cancelled { background: rgba(214,69,69,0.15); color: var(--danger); }
+
+.row-actions select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--mint-050);
+  color: var(--ink);
+  font-size: 0.82rem;
+}
+
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(11, 58, 56, 0.45);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 200;
+  padding: 20px;
+}
+.modal-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: var(--shadow-card-hover);
+}
